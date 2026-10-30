@@ -90,14 +90,47 @@
          <div>
             <a href="https://github.com/railsonn" class="text-white me-3"><i class="bi bi-github"></i></a>
             <a href="https://linkedin.com/in/railson-rocha-198b80371" class="text-white me-3"><i class="bi bi-linkedin"></i></a>
-            <a href="mailto:railsongaldinodrocha@gmail.com" class="text-white"><i class="bi bi-envelope"></i></a>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=railsongaldinodrocha@gmail.com"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="text-white"
+               title="Enviar e-mail">
+               <i class="bi bi-envelope"></i>
+            </a>        
          </div>
       </footer>
 
-         <!-- BOTÃO VOLTAR AO TOPO -->
-   <button id="btn-topo" class="btn btn-primary position-fixed bottom-0 end-0 m-4" style="display: none;">
-   <i class="bi bi-arrow-up-short"></i>
-   </button>
+      <!-- BOTÃO VOLTAR AO TOPO -->
+      <button id="btn-topo" class="btn btn-primary position-fixed bottom-0 end-0 m-4" style="display: none;">
+      <i class="bi bi-arrow-up-short"></i>
+      </button>
    </main>
+
+
+      <!-- SCRIPT -->
+   <script>
+      window.addEventListener('scroll', () => {
+      const btn = document.getElementById('btn-topo');
+      btn.style.display = window.scrollY > 300 ? 'block' : 'none';
+      });
+      
+      document.getElementById('btn-topo').addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+   </script>
+
+   <script>
+      document.getElementById('form-contato').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const nome = document.getElementById('nome').value;
+      const email = document.getElementById('email').value;
+      const mensagem = document.getElementById('mensagem').value;
+      
+      alert(`Obrigado, ${nome}! Sua mensagem foi enviada com sucesso.\n\nE-mail: ${email}\nMensagem: ${mensagem}`);
+      
+      this.reset();
+      });
+   </script>
+
 
 </body>
